@@ -49,7 +49,7 @@ def isValidArrowLine(line):
 # test if arrow doesn't repeat too much
 
 
-def isPreferredArrow(value, index, isJump, arrowCountStep, arrowCountHold, arrowCountJump, lastStepArrowIndex):
+def isPreferredArrow(value, index, isJump, arrowCountStep, arrowCountHold, arrowCountJump, lastStepArrowIndex, lastHoldArrowIndex):
 
     # mines don't matter put them anywhere
     if value == ARROW_MINE:
@@ -57,6 +57,10 @@ def isPreferredArrow(value, index, isJump, arrowCountStep, arrowCountHold, arrow
 
     # dont prefer repeat of last step
     if value == ARROW_STEP and not isJump and index == lastStepArrowIndex:
+        return False
+
+    # dont prefer repeat of last step
+    if (value == ARROW_HOLD_START or value == ARROW_ROLL_START) and not isJump and index == lastStepArrowIndex:
         return False
 
     arrowCount = []
@@ -115,6 +119,7 @@ def parseFile(fileName, directoryPath):
             arrowCountHold = [0 for i in range(ARROW_COUNT)]
             arrowCountJump = [0 for i in range(ARROW_COUNT)]
             lastStepArrowIndex = -1
+            lastHoldArrowIndex = -1
 
             for lineNumber in range(len(lines)):
                 line = lines[lineNumber].strip()
@@ -160,7 +165,7 @@ def parseFile(fileName, directoryPath):
 
                             preferredArrowIndexes = []
                             for i in validArrowIndexes:
-                                if isPreferredArrow(arrowValue, i, isJump, arrowCountStep, arrowCountHold, arrowCountJump, lastStepArrowIndex):
+                                if isPreferredArrow(arrowValue, i, isJump, arrowCountStep, arrowCountHold, arrowCountJump, lastStepArrowIndex, lastHoldArrowIndex):
                                     preferredArrowIndexes.append(i)
 
                             randomIndex = 0
@@ -188,6 +193,7 @@ def parseFile(fileName, directoryPath):
                             # keep new index for hold/roll arrows
                             if arrowValue == ARROW_HOLD_START or arrowValue == ARROW_ROLL_START:
                                 newHoldingArrowsIndex[arrowIndex] = randomIndex
+                                lastHoldArrowIndex = randomIndex
 
                             if arrowValue == ARROW_STEP and not isJump:
                                 lastStepArrowIndex = randomIndex

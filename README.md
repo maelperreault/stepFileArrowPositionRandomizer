@@ -21,7 +21,7 @@ In case something goes wrong, you can always use one of the .bak files<br/>
 Simply remove the .001.bak to have your .sm file once again<br/>
 
 DO NOT RUN THIS INSIDE YOUR MAIN STEPMANIA SONGS FOLDER THIS WILL RANDOMIZE ALL YOUR SONGS
-UNDOING THIS IS NOT SUPPORTED
+UNDOING THIS IS NOT SUPPORTED<br/>
 I suggest you work in a folder on your desktop just in case<br/>
 I suggest you keep your original (.sm) ifle with beats to do quick beat edits until you are done<br/>
 You can simply run the randomizer again to test new patterns<br/>

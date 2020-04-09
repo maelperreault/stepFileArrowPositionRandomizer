@@ -16,7 +16,7 @@ You will need to reopen file in ArrowVortex to see the changes<br/>
 You might need to force a reload of the file in Stepmania to see the changes<br/>
 Press CTRL+SHIFT+R in selection screen while the song is selected<br/>
 
-WARNING
+WARNING<br/>
 In case something goes wrong, you can always use one of the .bak files<br/>
 Simply remove the .001.bak to have your .sm file once again<br/>
 

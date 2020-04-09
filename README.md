@@ -1,10 +1,9 @@
 # Stepfile Arrow Position Randomizer
 
-Randomizes arrow positions in (.sm) files<br/>
-All (.sm) files in program directory and sub-directorries are randomized<br/>
-Backups of (.sm) files are created in case something goes terribly wrong<br/>
-Randomization is really simple for now and simply prevents too many of the same arrows in a row<br/>
-Basically just moves existing arrows around, you need to create the arrows first<br/>
+Randomizes arrow positions in (.sm) files for all (.sm) files in program directory and sub-directorries<br/>
+Backups (.bak) of (.sm) files are created in case something goes wrong<br/>
+Randomization is simple for now and simply prevents too many of the same arrows in a row<br/>
+Only moves existing arrows around, you need to create the arrows first<br/>
 
 HOW TO USE
 1) Use ArrowVortex to create basic (.sm) file
